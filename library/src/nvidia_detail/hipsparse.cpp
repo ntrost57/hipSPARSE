@@ -13279,7 +13279,8 @@ hipsparseStatus_t hipsparseSpSV_solve(hipsparseHandle_t           handle,
                                       const hipsparseDnVecDescr_t y,
                                       hipDataType                 computeType,
                                       hipsparseSpSVAlg_t          alg,
-                                      hipsparseSpSVDescr_t        spsvDescr)
+                                      hipsparseSpSVDescr_t        spsvDescr,
+                                      void*                       externalBuffer)
 {
     return hipCUSPARSEStatusToHIPStatus(cusparseSpSV_solve((cusparseHandle_t)handle,
                                                            hipOperationToCudaOperation(opA),
